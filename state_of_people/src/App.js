@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Questions from './comnonents/Questions'
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      areaWithQuestions: false
+    }
+    this.onStartTest=this.onStartTest.bind(this);
+  };
+
+  onStartTest(){
+    this.setState({
+      areaWithQuestions: <Questions />
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header className="App-header" style={{ backgroundColor: 'red'}}>
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <h1 className="App-title">Узнать состояние</h1>
+          <button onClick={this.onStartTest} >Начать</button>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <section>
+          {this.state.areaWithQuestions}
+        </section>
+        <footer></footer>
       </div>
     );
   }
