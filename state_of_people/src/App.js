@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import Questions from './comnonents/Questions'
+import Field from './components/Field';
+//redux
+import { connect } from 'react-redux';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      areaWithQuestions: false
+      areaWithField: false
     }
     this.onStartTest = this.onStartTest.bind(this);
   };
 
   onStartTest() {
     this.setState({
-      areaWithQuestions: true
+      areaWithField: true
     });
   }
 
@@ -22,21 +24,21 @@ class App extends Component {
         <header className="App-header" style={{ backgroundColor: 'red' }}>
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Узнать состояние</h1>
-          {!this.state.areaWithQuestions &&
+          {!this.state.areaWithField &&
             <button onClick={this.onStartTest} >Начать</button>
           }
-          {this.state.areaWithQuestions &&
+          {this.state.areaWithField &&
             <button onClick={this.onStartTest} >Сбросить</button>
           }
         </header>
         <section>
-          {!this.state.areaWithQuestions &&
-            <Questions
+          {!this.state.areaWithField &&
+            <Field
               title="Добро пожаловать! Lorem Upsum"
             />
           }
-          {this.state.areaWithQuestions &&
-            <Questions
+          {this.state.areaWithField &&
+            <Field
               title="Questions this"
               questions="true"
             />
@@ -48,4 +50,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+      face: state.face || null
+  };
+};
+
+export default connect(mapStateToProps)(App);

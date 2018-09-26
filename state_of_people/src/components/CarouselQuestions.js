@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Carousel, Well } from 'react-bootstrap';
-import ResultPopup from './ResultPopup'
+import ResultPopup from './ResultPopup';
+import Questions from './Questions';
 
 const arr = [
-    { id: 1, text: 1 },
-    { id: 2, text: 2 },
-    { id: 3, text: 3 },
+    { id: 1, title: 1 },
+    { id: 2, title: 2 },
+    { id: 3, title: 3 },
 ];
 
 class ControlledCarousel extends Component {
@@ -54,8 +55,8 @@ class ControlledCarousel extends Component {
                     {arr.map(el =>
                         <Carousel.Item key={el.id}>
                             <center style={{ padding: '100px' }}>
-                                <h3>Label № {el.text}</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h3>Label № {el.title}</h3>
+                                <Questions number={el.id} />
                                 {el.id === 3 &&
                                     <button onClick={this.onClickResult}>Результат</button>
                                 }
