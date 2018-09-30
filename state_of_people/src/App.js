@@ -10,13 +10,21 @@ class App extends Component {
       areaWithField: false
     }
     this.onStartTest = this.onStartTest.bind(this);
+    this.onEndTest = this.onEndTest.bind(this);
   };
 
   onStartTest() {
     this.setState({
       areaWithField: true
     });
-  }
+  };
+
+  onEndTest() {
+    
+    this.setState({
+      areaWithField: false
+    })
+  };
 
   render() {
     return (
@@ -28,7 +36,7 @@ class App extends Component {
             <button onClick={this.onStartTest} >Начать</button>
           }
           {this.state.areaWithField &&
-            <button onClick={this.onStartTest} >Сбросить</button>
+            <button onClick={this.onEndTest} >Сбросить</button>
           }
         </header>
         <section>
@@ -52,7 +60,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-      face: state.face || null
+    face: state.face || null
   };
 };
 

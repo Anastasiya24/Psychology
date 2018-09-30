@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Carousel, Well } from 'react-bootstrap';
 import ResultPopup from './ResultPopup';
 import Questions from './Questions';
+//redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getFace, getEyes, getHands, getLegs, getPalms, getShoulders } from '../actions/allActions'
 
 const arr = [
     { id: 1, title: 'Лицо' },
@@ -71,4 +75,15 @@ class ControlledCarousel extends Component {
     };
 };
 
-export default ControlledCarousel;
+function mapStateToProps(state) {
+    return {
+        face: state.face || null
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ getFace, getEyes, getHands, getLegs, getPalms, getShoulders }, dispatch);
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ControlledCarousel);

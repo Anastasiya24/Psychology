@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 //ui
 import ControlledCarousel from './CarouselQuestions'
 
@@ -12,7 +13,13 @@ class Field extends Component {
                 }
             </div>
         )
-    }
+    };  
 }
 
-export default Field;
+function mapStateToProps(state) {
+    return {
+        face: state.face || null
+    };
+};
+
+export default connect(mapStateToProps)(Field);
