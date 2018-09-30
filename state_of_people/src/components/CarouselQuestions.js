@@ -4,9 +4,12 @@ import ResultPopup from './ResultPopup';
 import Questions from './Questions';
 
 const arr = [
-    { id: 1, title: 1 },
-    { id: 2, title: 2 },
-    { id: 3, title: 3 },
+    { id: 1, title: 'Лицо' },
+    { id: 2, title: 'Глаза' },
+    { id: 3, title: 'Ладони' },
+    { id: 4, title: 'Руки' },
+    { id: 5, title: 'Плечи' },
+    { id: 6, title: 'Ноги' }
 ];
 
 class ControlledCarousel extends Component {
@@ -55,9 +58,8 @@ class ControlledCarousel extends Component {
                     {arr.map(el =>
                         <Carousel.Item key={el.id}>
                             <center style={{ padding: '100px' }}>
-                                <h3>Label № {el.title}</h3>
-                                <Questions number={el.id} />
-                                {el.id === 3 &&
+                                <Questions number={el.title} />
+                                {el.id === 6 &&
                                     <button onClick={this.onClickResult}>Результат</button>
                                 }
                             </center>

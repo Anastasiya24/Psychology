@@ -39,7 +39,7 @@ class App extends Component {
           }
           {this.state.areaWithField &&
             <Field
-              title="Questions this"
+              title="Выберите характеристики"
               questions="true"
             />
           }
