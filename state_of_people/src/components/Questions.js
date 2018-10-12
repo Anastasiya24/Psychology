@@ -9,16 +9,18 @@ import legsQuestions from '../questions/legs'
 class Questions extends Component {
     constructor(props){
         super(props);
+        this.collectionName;
         switch(this.props.number){
-            case 'Лицо': this.collectionWithQuestion = faceQuestions; break;
-            case 'Глаза': this.collectionWithQuestion = eyesQuestions; break;
-            case 'Ладони': this.collectionWithQuestion = palmsQuestions; break;
-            case 'Руки': this.collectionWithQuestion = handsQuestions; break;
-            case 'Плечи': this.collectionWithQuestion = shouldersQuestions; break;
-            case 'Ноги': this.collectionWithQuestion = legsQuestions; break;
+            case 'Лицо': this.collectionWithQuestion = faceQuestions; this.collectionName = 'faceQuestions'; break;
+            case 'Глаза': this.collectionWithQuestion = eyesQuestions; this.collectionName = 'eyesQuestions'; break;
+            case 'Ладони': this.collectionWithQuestion = palmsQuestions; this.collectionName = 'palmsQuestions'; break;
+            case 'Руки': this.collectionWithQuestion = handsQuestions; this.collectionName = 'handsQuestions'; break;
+            case 'Плечи': this.collectionWithQuestion = shouldersQuestions; this.collectionName = 'shouldersQuestions'; break;
+            case 'Ноги': this.collectionWithQuestion = legsQuestions; this.collectionName = 'legsQuestions'; break;
             default: break;
         }
     }
+
     
     render() {
         return (
@@ -26,7 +28,7 @@ class Questions extends Component {
                 <h1>{this.props.number}</h1>
                 { this.collectionWithQuestion && this.collectionWithQuestion.map(el =>
                     <div key={el.id}>
-                        <input type="radio" name="dzen" value={el.id} id={el.id} />
+                        <input type="radio" name={this.collectionName} value={el.id} id={el.id} onChange={() => this.props.onCheck(this.collectionName, el.id)}/>
                         <label for={el.id}>{el.text}</label>
                     </div>
                 )}

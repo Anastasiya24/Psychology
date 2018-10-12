@@ -20,7 +20,6 @@ class App extends Component {
   };
 
   onEndTest() {
-    
     this.setState({
       areaWithField: false
     })

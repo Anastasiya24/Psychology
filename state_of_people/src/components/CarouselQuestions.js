@@ -49,6 +49,11 @@ class ControlledCarousel extends Component {
         })
     };
 
+    onCheck(collectionName, id){
+        //name coll
+        // this.props.getFace(id);
+    };
+
     render() {
         const { index, direction } = this.state;
         return (
@@ -62,7 +67,10 @@ class ControlledCarousel extends Component {
                     {arr.map(el =>
                         <Carousel.Item key={el.id}>
                             <center style={{ padding: '100px' }}>
-                                <Questions number={el.title} />
+                                <Questions 
+                                    number={el.title} 
+                                    onCheck={this.onCheck}
+                                />
                                 {el.id === 6 &&
                                     <button onClick={this.onClickResult}>Результат</button>
                                 }
