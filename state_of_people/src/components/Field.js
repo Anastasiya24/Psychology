@@ -9,11 +9,13 @@ class Field extends Component {
             <div>
                 <h1>{this.props.title}</h1>
                 {this.props.questions &&
-                    <ControlledCarousel />
+                    <ControlledCarousel
+                        onClickResult={this.props.onClickResult}
+                    />
                 }
             </div>
         )
-    };  
+    };
 }
 
 function mapStateToProps(state) {

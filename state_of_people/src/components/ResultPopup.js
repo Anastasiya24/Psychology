@@ -12,6 +12,7 @@ class ResultPopup extends React.Component {
 
     handleHide() {
         this.props.onClosePopup();
+        this.props.onClickResult();
     }
 
     render() {
@@ -25,15 +26,16 @@ class ResultPopup extends React.Component {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title">
-                            Contained Modal
-                    </Modal.Title>
+                            Результат
+                        </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id
                         ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleHide}>Close</Button>
+                        <Button bsStyle="success" onClick={this.handleHide}>Подробнее</Button>                        
+                        <Button onClick={this.handleHide}>Закрыть</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

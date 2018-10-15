@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Field from './components/Field';
+import { Button, Navbar } from 'react-bootstrap';
+import Logo from './img/8.png'
 //redux
 import { connect } from 'react-redux';
 
@@ -29,14 +31,32 @@ class App extends Component {
     return (
       <div>
         <header className="App-header" style={{ backgroundColor: 'red' }}>
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Узнать состояние</h1>
-          {!this.state.areaWithField &&
-            <button onClick={this.onStartTest} >Начать</button>
-          }
-          {this.state.areaWithField &&
-            <button onClick={this.onEndTest} >Сбросить</button>
-          }
+          {/* <h1 className="App-title">Узнать состояние</h1> */}
+
+
+          <Navbar>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <img src={Logo} alt='logo'
+                //  style={{ width: '15%', height: '15%'}} 
+                 />
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Navbar.Text>
+                Тест на психологическое состояние
+            </Navbar.Text>
+              <Navbar.Text pullRight>
+                {!this.state.areaWithField &&
+                  <Button onClick={this.onStartTest} bsStyle="success">Начать</Button>
+                }
+                {this.state.areaWithField &&
+                  <Button bsStyle="warning" onClick={this.onEndTest} >Сбросить</Button>
+                }
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Navbar>
+
         </header>
         <section>
           {!this.state.areaWithField &&
@@ -48,6 +68,7 @@ class App extends Component {
             <Field
               title="Выберите характеристики"
               questions="true"
+              onClickResult={this.onEndTest}
             />
           }
         </section>
