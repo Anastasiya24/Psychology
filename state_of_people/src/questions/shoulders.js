@@ -1,7 +1,7 @@
 const shouldersQuestions = [
-    { id: 1, text: 'Раскрыты/Расправлены' },
-    { id: 2, text: 'Стянуты' },
-    { id: 3, text: 'Приподняты' }
+    { id: 30, text: 'Раскрыты/Расправлены' },
+    { id: 31, text: 'Стянуты' },
+    { id: 32, text: 'Приподняты' }
 ];
 
 export default shouldersQuestions;

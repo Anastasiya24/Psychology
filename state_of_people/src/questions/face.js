@@ -1,10 +1,10 @@
 const faceQuestions = [
-    { id: 1, text: 'Радостное' },
-    { id: 2, text: 'Задумчивое' },
-    { id: 3, text: 'Удивленное' },
-    { id: 4, text: 'Грустное' },
-    { id: 5, text: 'Расстроенное' },
-    { id: 6, text: 'Злое' },
+    { id: 7, text: 'Радостное' },
+    { id: 8, text: 'Задумчивое' },
+    { id: 9, text: 'Удивленное' },
+    { id: 10, text: 'Грустное' },
+    { id: 11, text: 'Расстроенное' },
+    { id: 12, text: 'Злое' },
 ];
 
 export default faceQuestions;

@@ -31,21 +31,19 @@ class App extends Component {
     return (
       <div>
         <header className="App-header" style={{ backgroundColor: 'red' }}>
-          {/* <h1 className="App-title">Узнать состояние</h1> */}
-
-
           <Navbar>
             <Navbar.Header>
-              <Navbar.Brand>
-                <img src={Logo} alt='logo'
-                //  style={{ width: '15%', height: '15%'}} 
-                 />
+              <Navbar.Brand  >
+                <img src={Logo} alt='logo' style={{ margin: '10px' }}
+                />
               </Navbar.Brand>
             </Navbar.Header>
             <Navbar.Collapse>
               <Navbar.Text>
-                Тест на психологическое состояние
-            </Navbar.Text>
+                <div style={{ margin: '10px' }}>
+                  Тест на психологическое состояние
+                </div>
+              </Navbar.Text>
               <Navbar.Text pullRight>
                 {!this.state.areaWithField &&
                   <Button onClick={this.onStartTest} bsStyle="success">Начать</Button>
@@ -61,7 +59,7 @@ class App extends Component {
         <section>
           {!this.state.areaWithField &&
             <Field
-              title="Добро пожаловать! Lorem Upsum"
+              title="Добро пожаловать! Предлагаем вам пройти тест по определению психологического состояния человека. Для этого нажмите кнопку 'Начать' и выберите характеристики. В конце теста узнайте результат, удачи вам :)"
             />
           }
           {this.state.areaWithField &&

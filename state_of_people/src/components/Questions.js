@@ -9,7 +9,7 @@ import legsQuestions from '../questions/legs'
 class Questions extends Component {
     constructor(props){
         super(props);
-        this.collectionName;
+        this.collectisonName=[];
         switch(this.props.number){
             case 'Лицо': this.collectionWithQuestion = faceQuestions; this.collectionName = 'faceQuestions'; break;
             case 'Глаза': this.collectionWithQuestion = eyesQuestions; this.collectionName = 'eyesQuestions'; break;
@@ -25,11 +25,11 @@ class Questions extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.number}</h1>
+                <h1 style={{ color: 'black' }} >{this.props.number}</h1>
                 { this.collectionWithQuestion && this.collectionWithQuestion.map(el =>
                     <div key={el.id}>
                         <input type="radio" name={this.collectionName} value={el.id} id={el.id} onChange={() => this.props.onCheck(this.collectionName, el.id)}/>
-                        <label for={el.id}>{el.text}</label>
+                        <label style={{ color: 'black', marginLeft: 10}} for={el.id}>{el.text}</label>
                     </div>
                 )}
             </div>

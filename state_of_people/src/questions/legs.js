@@ -1,8 +1,8 @@
 const handsQuestions = [
-    { id: 1, text: 'Ровные' },
-    { id: 2, text: 'Расставлены' },
-    { id: 3, text: 'Нога на ноге' },
-    { id: 4, text: 'Скрещены параллельно' }
+    { id: 23, text: 'Ровные' },
+    { id: 24, text: 'Расставлены' },
+    { id: 25, text: 'Нога на ноге' },
+    { id: 26, text: 'Скрещены параллельно' }
 ];
 
 export default handsQuestions;

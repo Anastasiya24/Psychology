@@ -7,7 +7,9 @@ class Field extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.title}</h1>
+                <center style={{ margin: '50px', padding: '30px', border: '3px solid green' }}>
+                    <h1>{this.props.title}</h1>
+                </center>
                 {this.props.questions &&
                     <ControlledCarousel
                         onClickResult={this.props.onClickResult}

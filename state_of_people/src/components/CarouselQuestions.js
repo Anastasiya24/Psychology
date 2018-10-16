@@ -51,13 +51,21 @@ class ControlledCarousel extends Component {
     };
 
     onClickResult() {
-        this.setState({
-            openResult:
-                <ResultPopup
-                    onClosePopup={this.onClosePopup}
-                    onClickResult={this.props.onClickResult}
-                />
-        })
+        console.log(this.props.face.choice);
+        if (this.props.face.choice.length !== 0 ||
+            this.props.eyes.choice.length !== 0 ||
+            this.props.hands.choice.length !== 0 ||
+            this.props.legs.choice.length !== 0 ||
+            this.props.palms.choice.length !== 0 ||
+            this.props.shoulders.choice.length !== 0)
+            this.setState({
+                openResult:
+                    <ResultPopup
+                        onClosePopup={this.onClosePopup}
+                        onClickResult={this.props.onClickResult}
+                    />
+            });
+        else alert('Вы не выбрали критерии!')
     };
 
     onCheck(collectionName, id) {
@@ -75,38 +83,47 @@ class ControlledCarousel extends Component {
     render() {
         const { index, direction } = this.state;
         return (
-            <Well style={{ backgroundColor: 'yellow' }}>
+            <center>
                 {this.state.openResult}
-                <Carousel
-                    activeIndex={index}
-                    direction={direction}
-                    onSelect={this.handleSelect}
-                >
-                    {arr.map(el =>
-                        <Carousel.Item key={el.id}>
-                            <img src={el.im} alt='' style={{ opacity: 0.5 }} />
-                            <Carousel.Caption>
-                                <center style={{ padding: '100px' }}>
-                                    <Questions
-                                        number={el.title}
-                                        onCheck={this.onCheck}
-                                    />
-                                    {el.id === 6 &&
-                                        <Button bsStyle="info" onClick={this.onClickResult}>Результат</Button>
-                                    }
-                                </center>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    )}
-                </Carousel>
-            </Well>
+                <div style={{ width: '900px', height: '1000px' }}>
+                    <Well style={{ backgroundColor: '#EEEEEE' }}>
+                        <Carousel
+                            activeIndex={index}
+                            direction={direction}
+                            onSelect={this.handleSelect}
+                        >
+                            {arr.map(el =>
+                                <Carousel.Item key={el.id}>
+                                    <img src={el.im} alt='' style={{ opacity: 0.3, width: '700px', height: '400px' }} />
+                                    <Carousel.Caption>
+                                        <center style={{ padding: '10px' }}>
+                                            <Questions
+                                                number={el.title}
+                                                onCheck={this.onCheck}
+                                            />
+                                            {el.id === 6 &&
+                                                <Button bsStyle="info" onClick={this.onClickResult}>Результат</Button>
+                                            }
+                                        </center>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            )}
+                        </Carousel>
+                    </Well>
+                </div>
+            </center>
         );
     };
 };
 
 function mapStateToProps(state) {
     return {
-        face: state.face || null
+        face: state.facePage,
+        eyes: state.eyesPage,
+        hands: state.handsPage,
+        legs: state.legsPage,
+        palms: state.palmsPage,
+        shoulders: state.shouldersPage
     };
 };
 
