@@ -11,7 +11,8 @@ import Eyes from '../img/eyes.jpg';
 import Palms from '../img/palms.jpg';
 import Hands from '../img/hands.jpg';
 import Shoulders from '../img/shoulders.jpg';
-import Legs from '../img/legs.jpg'
+import Legs from '../img/legs.jpg';
+import { checkResult } from '../actions/checkResult';
 
 const arr = [
     { id: 1, title: 'Лицо', im: Face },
@@ -57,14 +58,25 @@ class ControlledCarousel extends Component {
             this.props.hands.choice.length !== 0 ||
             this.props.legs.choice.length !== 0 ||
             this.props.palms.choice.length !== 0 ||
-            this.props.shoulders.choice.length !== 0)
+            this.props.shoulders.choice.length !== 0) {
+            let u = [
+                this.props.eyes.choice,
+                this.props.face.choice,
+                this.props.hands.choice,
+                this.props.legs.choice,
+                this.props.palms.choice,
+                this.props.shoulders.choice
+            ];
+            let us = u.filter(Number);
             this.setState({
                 openResult:
                     <ResultPopup
+                        text={checkResult(us)}
                         onClosePopup={this.onClosePopup}
                         onClickResult={this.props.onClickResult}
                     />
             });
+        }
         else alert('Вы не выбрали критерии!')
     };
 

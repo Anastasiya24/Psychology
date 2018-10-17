@@ -30,8 +30,7 @@ class ResultPopup extends React.Component {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id
-                        ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
+                        {this.props.text}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button bsStyle="success" onClick={this.handleHide}>Подробнее</Button>                        
