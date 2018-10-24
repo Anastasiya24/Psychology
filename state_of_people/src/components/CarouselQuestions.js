@@ -71,7 +71,8 @@ class ControlledCarousel extends Component {
             this.setState({
                 openResult:
                     <ResultPopup
-                        text={checkResult(us)}
+                        text={checkResult(us, "result")}
+                        description={checkResult(us, "description")}
                         onClosePopup={this.onClosePopup}
                         onClickResult={this.props.onClickResult}
                     />

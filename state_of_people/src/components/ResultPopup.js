@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import ResponseDescription from './ResponseDescription'
 
 class ResultPopup extends React.Component {
     constructor(props, context) {
@@ -33,7 +34,7 @@ class ResultPopup extends React.Component {
                         {this.props.text}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bsStyle="success" onClick={this.handleHide}>Подробнее</Button>                        
+                        <ResponseDescription description={this.props.description} /> 
                         <Button onClick={this.handleHide}>Закрыть</Button>
                     </Modal.Footer>
                 </Modal>
