@@ -13,13 +13,15 @@ import Hands from '../img/hands.jpg';
 import Shoulders from '../img/shoulders.jpg';
 import Legs from '../img/legs.jpg';
 import { checkResult } from '../actions/checkResult';
+//ui
+import './style.css';
 
 const arr = [
-    { id: 1, title: 'Лицо', im: Face },
-    { id: 2, title: 'Глаза', im: Eyes },
-    { id: 3, title: 'Ладони', im: Palms },
-    { id: 4, title: 'Руки', im: Hands },
-    { id: 5, title: 'Плечи', im: Shoulders },
+    { id: 1, title: 'Глаза', im: Eyes },
+    { id: 2, title: 'Лицо', im: Face },
+    { id: 3, title: 'Плечи', im: Shoulders },
+    { id: 4, title: 'Руки', im: Hands },        
+    { id: 5, title: 'Ладони', im: Palms },
     { id: 6, title: 'Ноги', im: Legs }
 ];
 
@@ -96,12 +98,12 @@ class ControlledCarousel extends Component {
     render() {
         const { index, direction } = this.state;
         return (
-            <center>
+            <center className='humanPart'>
                 {this.state.openResult}
                 <div style={{ width: '900px', height: '1000px' }}>
                     <Well style={{ backgroundColor: '#EEEEEE' }}>
                         <Carousel
-                            activeIndex={index}
+                            activeIndex={this.props.activePage || index}
                             direction={direction}
                             onSelect={this.handleSelect}
                         >

@@ -50,31 +50,31 @@ export function checkResult(result, options) {
         //
         if (lie) {
             lieSum = (lie / result.length) * 100;
-            resultString = `Человек лжёт с вероятностью ${lieSum} %.`
+            resultString = `Человек лжёт с вероятностью ${lieSum} %.`+'\n'
         }
         if (nedovolen) {
             nedovolenSum = (nedovolen / result.length) * 100;
-            resultString += ` Человек недоволен с вероятностью ${nedovolenSum.toFixed()} %.`
+            resultString += ` Человек недоволен с вероятностью ${nedovolenSum.toFixed()} %.`+'\n'
         }
         if (chesten) {
             chestenSum = (chesten / result.length) * 100;
-            resultString += ` Человек честен с вами с вероятностью ${chestenSum.toFixed()} %.`
+            resultString += ` Человек честен с вами с вероятностью ${chestenSum.toFixed()} %.`+'\n'
         }
         if (zadymalsy) {
             zadymalsySum = (zadymalsy / result.length) * 100;
-            resultString += ` Человек задумался о чём-то с вероятностью ${zadymalsySum.toFixed()} %.`
+            resultString += ` Человек задумался о чём-то с вероятностью ${zadymalsySum.toFixed()} %.`+'\n'
         }
         if (nervnichaet) {
             nervnichaetSum = (nervnichaet / result.length) * 100;
-            resultString += ` Человек нервничает с вероятностью ${nervnichaetSum.toFixed()} %.`
+            resultString += ` Человек нервничает с вероятностью ${nervnichaetSum.toFixed()} %.`+'\n'
         }
         if (uveren) {
             uverenSum = (uveren / result.length) * 100;
-            resultString += ` Человек уверен в себе с вероятностью ${uverenSum.toFixed()} %.`
+            resultString += ` Человек уверен в себе с вероятностью ${uverenSum.toFixed()} %.`+'\n'
         }
         if (skyka) {
             skykaSum = (skyka / result.length) * 100;
-            resultString += ` Человеку скучно с вероятностью ${skykaSum.toFixed()} %.`
+            resultString += ` Человеку скучно с вероятностью ${skykaSum.toFixed()} %.`+'\n'
         }
     }
 

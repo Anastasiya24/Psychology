@@ -1,0 +1,23 @@
+.humanPart{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.image{
+    width: 250px;
+}
+
+.onChosen{
+    /* display: inline-block; */
+    cursor: pointer;
+    border-top:5px solid red;
+    border-bottom:5px solid red;
+    border-left:1px solid red;
+    border-right:1px solid red;    
+}
+
+.noNotChosen{
+    /* display: inline-block; */
+    cursor: pointer;    
+    border: none
+}
