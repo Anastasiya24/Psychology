@@ -12,7 +12,7 @@ import Palms from '../img/palms.jpg';
 import Hands from '../img/hands.jpg';
 import Shoulders from '../img/shoulders.jpg';
 import Legs from '../img/legs.jpg';
-import { checkResult } from '../actions/checkResult';
+import { checkResult, translite } from '../actions/checkResult';
 //ui
 import './style.css';
 
@@ -54,7 +54,6 @@ class ControlledCarousel extends Component {
     };
 
     onClickResult() {
-        console.log(this.props.face.choice);
         if (this.props.face.choice.length !== 0 ||
             this.props.eyes.choice.length !== 0 ||
             this.props.hands.choice.length !== 0 ||
@@ -92,7 +91,7 @@ class ControlledCarousel extends Component {
             case 'shouldersQuestions': this.props.getShoulders(id); break;
             case 'legsQuestions': this.props.getLegs(id); break;
             default: break;
-        }
+        };
     };
 
     render() {
