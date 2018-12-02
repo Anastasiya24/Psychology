@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//ui
 import ControlledCarousel from './CarouselQuestions'
 import "./style.css"
-//
 import Eyes from '../img/part/eyes1.png'
 import Face from '../img/part/face1.png'
 import Shoulders from '../img/part/shoulders1.png'
@@ -51,7 +49,7 @@ class Field extends Component {
         const { onClickEyes, onClickFace, onClickShoulders, onClickHands, onClickPalms, onClickLegs } = this.state;
         return (
             <div>
-                <center style={{ margin: '50px', padding: '30px', border: '3px solid green' }}>
+                <center style={{ margin: '50px', padding: '30px', border: '3px solid orange' }}>
                     <h1>{this.props.title}</h1>
                 </center>
                 {this.props.questions &&
